@@ -1,0 +1,45 @@
+pgAdmin4より、①Student　という名前のデータベースを作成してください。
+
+②下記のクエリを実行してください。
+
+・テーブルの作製　( student_table)
+
+CREATE TABLE student_table(
+id CHAR(5) NOT NULL,
+password VARCHAR(256) NOT NULL,
+name VARCHAR(256) NOT NULL,
+gender VARCHAR(10) NOT NULL,
+addres VARCHAR(50) NOT NULL,
+contact VARCHAR(50) NOT NULL,
+tel VARCHAR(20) NOT NULL,
+school VARCHAR(20),
+classification VARCHAR(10),
+school_year VARCHAR(10),
+good_subject VARCHAR(20),
+weak_subject VARCHAR(20),
+hobby VARCHAR(50),
+feature VARCHAR(50),
+important_point VARCHAR(50),
+teach_material VARCHAR(50),
+login_time VARCHAR(20),
+CONSTRAINT pk_id PRIMARY KEY(id)
+);　
+
+・テーブルが作成されたかどうかの確認
+
+SELECT * FROM student_table
+
+・データの登録を行ってください。
+
+INSERT INTO student_table(
+id, password, name, gender, addres, contact, tel, school, classification,
+school_year, good_subject, weak_subject, hobby, feature, important_point, teach_material)
+
+VALUES('00001','admin','鈴木太郎','男','愛知県清須市西枇杷島町000-00','taro@gmail.com','090-000-000','西枇杷島中学校','中学校','2年','数学、理科',
+	  '社会','ゲーム：APEX,LOL','人見知りの生徒なので、休憩をこまめに入れ趣味などの会話をする。','定義を覚えようとするので、ロジックを理解させること。','教材無し。学校指定教材での指導。'),
+	  ('00002','admin','福田姫奈','女','京都府京都市左京区000-00','hime@gmail.com','060-000-000','城西小学校','小学校','6年','国語、英語',
+	  '数学','スポーツ：バスケ','注意散漫の傾向あり。会話を挟みつつモチベを保つ。','理解できていない部分を言語化させる練習をすること。','教材有り。数学、理科'),
+	  ('00003','admin','鍋野璃々','女','滋賀県大津市000-00','nabeno@gmail.com','090-100-000','琵琶高校','高校','2年','数学、英語',
+	  '物理、倫政','ゲーム：OverWatch','勉強の持続力が高いので、効率の良い課題支給を行うこと。','定義のロジックを必ず理解させること。定義の導出方法などを教える。','教材有り。物理、倫政');
+
+
